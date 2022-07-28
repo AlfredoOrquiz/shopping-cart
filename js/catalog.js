@@ -1,7 +1,7 @@
 /* global Product, Cart */
 
 'use strict';
-
+console.log('Developed by Team Bubblegum! We chew the Competition!');
 // Set up an empty cart for use on this page.
 const cart = new Cart([]);
 
@@ -9,10 +9,14 @@ const cart = new Cart([]);
 // (the things in the Product.allProducts array) into the drop down list.
 function populateForm() {
 
-  //TODO: Add an <option> tag inside the form's select for each product
+  //DONE: Add an <option> tag inside the form's select for each product
   const selectElement = document.getElementById('items');
   for (let i in Product.allProducts) {
-
+    // console.log(Product.allProducts[i]);
+    let option = document.createElement('option');
+    option.textContent = Product.allProducts[i].name;
+    option.value = Product.allProducts[i].name;
+    selectElement.appendChild(option);
   }
 
 }
@@ -23,7 +27,7 @@ function populateForm() {
 function handleSubmit(event) {
 
   // TODO: Prevent the page from reloading
-
+  event.preventDefault();
   // Do all the things ...
   addSelectedItemToCart();
   cart.saveToLocalStorage();
@@ -34,9 +38,16 @@ function handleSubmit(event) {
 
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
-  // TODO: suss out the item picked from the select list
-  // TODO: get the quantity
+
+  // DONE: suss out the item picked from the select list
+  let itemPicked = document.getElementById('items').value;
+
+  
+  // DONE: get the quantity
+  let quantityPicked = document.getElementById('quantity').value;
+  console.log('The user picked ', quantityPicked, itemPicked);
   // TODO: using those, add one item to the Cart
+  cart.addItem(itemPicked, quantityPicked);
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
