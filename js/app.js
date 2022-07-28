@@ -8,11 +8,19 @@ const Cart = function(items) {
 };
 
 Cart.prototype.addItem = function(product, quantity) {
+<<<<<<< HEAD
   // DONE: Fill in this instance method to create a new CartItem and add it to this.items
   ;
 console.log('adding ', quantity, product)
 }
 Cart.prototype.saveToLocalStorage = function () {
+=======
+  // TODO: Fill in this instance method to create a new CartItem and add it to this.items
+};
+
+Cart.prototype.saveToLocalStorage = function() {
+  
+>>>>>>> refs/remotes/origin/main
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
   function storeProducts() {
     console.log(productOrders);

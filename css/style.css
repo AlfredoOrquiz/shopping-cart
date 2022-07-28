@@ -1,1 +1,17 @@
 /* TODO: Make it awesome */
+body {
+  background-color: #F0D54F;
+}
+
+h1 {
+  color: #F07032;
+}
+
+header h1 {
+  font-family: 'Courgette', cursive;
+  font-size: xx-large;
+}
+
+.copy {
+  color: #686868;
+}
