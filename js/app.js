@@ -1,5 +1,6 @@
 'use strict';
 
+let productOrders = [];
 // Cart constructor.
 const Cart = function(items) {
   // this.items is an array of CartItem instances.
@@ -7,26 +8,25 @@ const Cart = function(items) {
 };
 
 Cart.prototype.addItem = function(product, quantity) {
-  console.log('adding', product, quantity);
   // DONE: Fill in this instance method to create a new CartItem and add it to this.items
-  // let cartThing = new CartItem(prodct, quantity);
-  this.items.push(new CartItem(product, quantity));
-
-  console.log(this.item);
+  ;
+console.log('adding ', quantity, product)
+}
+Cart.prototype.saveToLocalStorage = function () {
+  // TODO: Fill in this instance method to save the contents of the cart to localStorage
+  function storeProducts() {
+    console.log(productOrders);
+    let stringifiedProducts = JSON.stringify(productOrders);
+    console.log(stringifiedProducts);
+    localStorage.setItem('products', stringifiedProducts)
+}
 };
-
-Cart.prototype.saveToLocalStorage = function() {
-  // DONE: Fill in this instance method to save the contents of the cart to localStorage
-  let stringifiedItems = JSON.stringify(this.items);
-  localStorage.setItem(cart, stringifiedItems);
-};
-
-Cart.prototype.removeItem = function(item) {
-  this.removeItem
+Cart.prototype.removeItem = function (item) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
-};
 
+  
+};
 const CartItem = function(product, quantity) {
   this.product = product;
   this.quantity = quantity;

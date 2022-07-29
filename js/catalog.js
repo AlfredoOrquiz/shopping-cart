@@ -1,7 +1,7 @@
 /* global Product, Cart */
 
 'use strict';
-
+console.log('Developed by Team Bubblegum! We chew the Competition!');
 // Set up an empty cart for use on this page.
 const cart = new Cart([]);
 
@@ -12,9 +12,10 @@ function populateForm() {
   //DONE: Add an <option> tag inside the form's select for each product
   const selectElement = document.getElementById('items');
   for (let i in Product.allProducts) {
-    console.log(Product.allProducts[i]);
+    // console.log(Product.allProducts[i]);
     let option = document.createElement('option');
     option.textContent = Product.allProducts[i].name;
+    option.value = Product.allProducts[i].name;
     selectElement.appendChild(option);
   }
 
@@ -35,10 +36,13 @@ function handleSubmit(event) {
 
 }
 
-// DONE: Add the selected item and quantity to the cart
+// TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
+
   // DONE: suss out the item picked from the select list
   let itemPicked = document.getElementById('items').value;
+
+  
   // DONE: get the quantity
   let quantityPicked = document.getElementById('quantity').value;
   console.log('The user picked ', quantityPicked, itemPicked);
